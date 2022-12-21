@@ -14,4 +14,13 @@
 #   change shell to zsh and install oh my zsh
     chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # copy config file
+    sudo rm -r ~/.config/alacritty
+    sudo cp -r alacritty ~/.config/
+    sudo rm -r ~/.config/nvim
+    sudo cp -r nvim ~/config/
+    sudo rm ~/.tmux.conf
+    sudo cp .tmux.conf ~/
+    sudo rm ~/.zshrc 
+    sudo cp .zshrc ~/
 
