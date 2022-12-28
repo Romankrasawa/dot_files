@@ -1,4 +1,5 @@
 local opt = vim.opt
+local g = vim.g
 
 -- line numbers
 opt.relativenumber = true
@@ -36,3 +37,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+g.netrw_banner = 0
+g.netrw_liststyle = 3
