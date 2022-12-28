@@ -21,13 +21,13 @@
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   # copy config file
     cd $directory
-    sudo mv alacritty ~/.config/alacritty
+    sudo mv -f alacritty ~/.config
 
-    sudo mv nvim ~/.config/nvim
+    sudo mv -f nvim ~/.config
 
-    sudo mv .tmux.conf ~/.tmux.conf
+    sudo mv -f .tmux.conf ~
  
-    sudo mv .zshrc ~/.zshrc
+    sudo mv -f .zshrc ~
   # update packages in nvim
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 

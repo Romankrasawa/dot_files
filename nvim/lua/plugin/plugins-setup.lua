@@ -2,15 +2,17 @@ local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
+    print("not good")
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
     vim.cmd [[packadd packer.nvim]]
     return true
   end
-  return true
+  print("norm")
+  return false
 end
-local packer_bootstrap = ensure_packer()
 
--- autocommand that reloads neovim and installs/updates/removes plugins
+local packer_bootstrap = ensure_packer()
+print(packer_bootstrap)
 -- when file is saved
 -- vim.cmd([[ 
 --   augroup packer_user_config
