@@ -68,16 +68,19 @@ return packer.startup(function(use)
     'f3fora/cmp-spell',
     'hrsh7th/cmp-emoji',
     'L3MON4D3/LuaSnip'
-    }
+    },
+    config = function()
+      require("plugin/Cmp")
+    end
     })
 
-  use({'tzachar/cmp-tabnine',
-  run = './install.sh',
-  requires = 'hrsh7th/nvim-cmp',
-  config = function()
-    require("plugin/Cmp")
-  end
-  })
+  -- use({'tzachar/cmp-tabnine',
+  -- run = './install.sh',
+  -- requires = 'hrsh7th/nvim-cmp',
+  -- config = function()
+  --   require("plugin/Cmp")
+  -- end
+  -- })
 
   use("bluz71/vim-nightfly-colors") --colorscheme
   
@@ -91,7 +94,19 @@ return packer.startup(function(use)
     require("nvim-tree").setup()
   end
   })
-
+  use({
+  "utilyre/barbecue.nvim",
+  branch = "dev", -- omit this if you only want stable updates
+  requires = {
+    "neovim/nvim-lspconfig",
+    "smiteshp/nvim-navic",
+    "kyazdani42/nvim-web-devicons", -- optional dependency
+  },
+  after = "nvim-web-devicons", -- keep this if you're using NvChad
+  config = function()
+    require("barbecue").setup()
+  end,
+  })
   use({"numToStr/Comment.nvim", 
   config = function()
 	  require("plugin/Comment")

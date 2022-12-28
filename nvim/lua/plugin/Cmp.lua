@@ -77,7 +77,7 @@ cmp.setup {
         {name = "nvim_lua"},
         {name = "look"}, 
         {name = "path"},
-        {name = 'cmp_tabnine'},
+--[[         {name = 'cmp_tabnine'}, ]]
         {name = "calc"}, 
         {name = "spell"},
         {name = "emoji"},
@@ -88,8 +88,8 @@ cmp.setup {
 }
 
 -- TabNine
-local tabnine = require('cmp_tabnine.config')
-tabnine.setup({max_lines = 1000, max_num_results = 20, sort = true})
+-- local tabnine = require('cmp_tabnine.config')
+-- tabnine.setup({max_lines = 1000, max_num_results = 20, sort = true})
 
 -- Database completion
 vim.api.nvim_exec([[
