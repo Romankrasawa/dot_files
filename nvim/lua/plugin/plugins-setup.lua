@@ -12,7 +12,7 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
-print(packer_bootstrap)
+
 -- when file is saved
 -- vim.cmd([[ 
 --   augroup packer_user_config
